@@ -18,107 +18,107 @@ body{
     color:#333;
 }
 
-/* ===== WELCOME ===== */
+/* WELCOME */
 #welcome{
     position:fixed;
     inset:0;
-    background:radial-gradient(circle at top,#764ba2,#000);
+    background:radial-gradient(circle,#222,#000);
     display:flex;
     align-items:center;
     justify-content:center;
     z-index:999;
+    animation:fadeIn .8s ease;
 }
 .welcome-box{
-    background:rgba(255,255,255,.96);
-    padding:50px 40px;
+    background:#fff;
+    padding:45px;
     border-radius:26px;
     text-align:center;
-    max-width:430px;
+    max-width:420px;
     width:90%;
-    animation:floatIn .9s ease;
-}
-@keyframes floatIn{
-    from{transform:translateY(40px);opacity:0}
-    to{transform:translateY(0);opacity:1}
+    animation:pop .7s ease;
 }
 .welcome-box h1{
     font-size:2.2em;
-    margin-bottom:10px;
     background:linear-gradient(135deg,#667eea,#764ba2);
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
 }
-.welcome-box p{
-    font-size:1em;
-    color:#555;
-    margin-bottom:30px;
-}
+.welcome-box p{opacity:.8}
 .welcome-box button{
+    margin-top:25px;
     padding:14px 34px;
     border:none;
     border-radius:16px;
-    font-size:1.05em;
+    font-size:1.1em;
     font-weight:600;
     color:#fff;
     cursor:pointer;
     background:linear-gradient(135deg,#667eea,#764ba2);
-    box-shadow:0 10px 25px rgba(102,126,234,.4);
 }
 
-/* ===== HEADER ===== */
+/* HEADER */
 header{
     background:#fff;
-    padding:30px 15px;
+    padding:28px 16px;
     text-align:center;
     position:sticky;
     top:0;
     z-index:10;
 }
 .logo{
-    font-size:2.4em;
+    font-size:2.3em;
     font-weight:700;
     background:linear-gradient(135deg,#667eea,#764ba2);
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
 }
+.address{
+    font-size:.9em;
+    opacity:.7;
+    margin-top:6px;
+}
 
-/* ===== CONTENT ===== */
+/* CONTENT */
 .container{
     max-width:1200px;
     margin:auto;
     padding:20px;
     display:grid;
-    gap:30px;
+    gap:32px;
 }
 section{
     background:rgba(255,255,255,.95);
-    border-radius:24px;
-    padding:34px;
+    border-radius:22px;
+    padding:30px;
     box-shadow:0 18px 40px rgba(0,0,0,.12);
     opacity:0;
-    transform:translateY(40px);
+    transform:translateY(30px);
     transition:.6s ease;
 }
 section.show{
     opacity:1;
-    transform:translateY(0);
+    transform:none;
 }
-h2{color:#667eea}
+h2{
+    color:#667eea;
+    margin-bottom:10px;
+}
 .line{
     height:4px;
     background:linear-gradient(90deg,#667eea,#764ba2,#f093fb);
-    border-radius:5px;
-    margin:15px 0 25px;
+    border-radius:6px;
+    margin:14px 0 26px;
 }
 
-/* ===== MANAGER ===== */
+/* MANAGER */
 .manager-box{
     display:flex;
     gap:16px;
     align-items:center;
     background:linear-gradient(135deg,rgba(102,126,234,.12),rgba(118,75,162,.12));
     padding:18px;
-    border-radius:20px;
+    border-radius:18px;
 }
 .manager-photo{
     width:72px;
@@ -128,95 +128,54 @@ h2{color:#667eea}
     border:3px solid #667eea;
 }
 
-/* ===== ACCORDION ===== */
-.acc-item{
-    margin-bottom:15px;
-    border-radius:18px;
-    overflow:hidden;
-    background:#f6f7ff;
-}
-.acc-header{
-    padding:16px 20px;
-    font-weight:600;
-    cursor:pointer;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-.acc-body{
-    max-height:0;
-    overflow:hidden;
-    padding:0 20px;
-    transition:.4s ease;
-}
-.acc-item.active .acc-body{
-    max-height:300px;
-    padding:15px 20px 20px;
-}
-
-/* ===== CARDS ===== */
-.cards{
+/* INFO CARDS */
+.info-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
     gap:18px;
+    margin-top:18px;
 }
-.card{
+.info{
     background:#fff;
+    border-radius:18px;
     padding:22px;
-    border-radius:20px;
-    text-align:center;
-    box-shadow:0 10px 25px rgba(0,0,0,.1);
+    box-shadow:0 10px 24px rgba(0,0,0,.08);
 }
-.card i{
-    font-size:2em;
+.info i{
     color:#667eea;
-    margin-bottom:10px;
+    font-size:1.8em;
+    margin-bottom:8px;
 }
 
-/* ===== CLOSING ===== */
-.closing{
-    text-align:center;
-    padding:70px 25px;
-    background:linear-gradient(135deg,#667eea,#764ba2);
-    color:#fff;
-}
-.closing h2{
-    font-size:2em;
-    margin-bottom:15px;
-}
-.closing p{
-    max-width:680px;
-    margin:0 auto;
-    font-size:1.05em;
-    line-height:1.7;
-    opacity:.95;
-}
-
-/* ===== WA ===== */
+/* WA FLOAT */
 .wa-float{
     position:fixed;
-    right:20px;
-    bottom:20px;
-    width:58px;
-    height:58px;
+    right:18px;
+    bottom:18px;
     background:#25D366;
     color:#fff;
-    border-radius:50%;
+    padding:14px 18px;
+    border-radius:50px;
+    font-weight:600;
     display:flex;
+    gap:10px;
     align-items:center;
-    justify-content:center;
-    font-size:1.9em;
-    box-shadow:0 10px 25px rgba(0,0,0,.3);
-    z-index:999;
-    animation:pulse 1.8s infinite;
-}
-@keyframes pulse{
-    0%{box-shadow:0 0 0 0 rgba(37,211,102,.6)}
-    70%{box-shadow:0 0 0 18px rgba(37,211,102,0)}
-    100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}
+    box-shadow:0 10px 30px rgba(0,0,0,.25);
+    text-decoration:none;
+    z-index:20;
 }
 
-/* MOBILE */
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:45px 20px;
+    color:#fff;
+    opacity:.9;
+}
+
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes pop{from{transform:scale(.8);opacity:0}to{transform:scale(1);opacity:1}}
+
 @media(max-width:480px){
     .manager-box{flex-direction:column;text-align:center}
 }
@@ -228,9 +187,9 @@ h2{color:#667eea}
 <!-- WELCOME -->
 <div id="welcome">
     <div class="welcome-box">
-        <h1>Halo 👋</h1>
-        <p>Selamat datang di website resmi<br><b>PT Ombak Biru Mentari</b></p>
-        <button onclick="enterSite()">Masuk & Jelajahi</button>
+        <h1>Selamat Datang 👋🏻</h1>
+        <p>🗳️ Website Resmi PT Ombak Biru Mentari</p>
+        <button onclick="enterSite()">Masuk</button>
     </div>
 </div>
 
@@ -240,73 +199,90 @@ h2{color:#667eea}
 </audio>
 
 <header>
-    <div class="logo"><i class="fa-solid fa-box"></i> PT Ombak Biru Mentari</div>
-    <p>Solusi Packaging Kardus Berkualitas</p>
+    <div class="logo">PT OMBAK BIRU MENTARI</div>
+    <div class="address">
+        📍 Jl. Padat Karya KM 0.7 Curug Kulon Curug Tangerang<br>
+        Kab. Tangerang, Banten, Indonesia
+    </div>
 </header>
 
 <div class="container">
 
-<section>
-<h2>Profil Perusahaan</h2>
+<section class="reveal">
+<h2><i class="fa-solid fa-building"></i> Tentang Perusahaan</h2>
 <div class="line"></div>
 
 <div class="manager-box">
-    <img src="manager.png" class="manager-photo">
+    <img src="photo.png" class="manager-photo">
     <div>
-        <b>Manager: Pak Dumyati</b><br>
+        <b>Manager: Mr. Dumyati</b><br>
         Butuh kerjaan? Hubungi aja Pak Dumyati  
         <br>(jangan sering-sering, lagi sibuk 😄)
-        <br><b>📞 085947686712</b>
+        <br>📞 085947686712
     </div>
 </div>
 
-<div class="acc-item">
-    <div class="acc-header">🏢 Tentang Perusahaan <i class="fa-solid fa-chevron-down"></i></div>
-    <div class="acc-body">
-        PT Ombak Biru Mentari bergerak di bidang industri kemasan, fokus pada produksi kardus dan karton box
-        berkualitas untuk UMKM hingga perusahaan skala besar.
+<div class="info-grid">
+    <div class="info">
+        <i class="fa-solid fa-box"></i>
+        <h4>Fokus Usaha</h4>
+        <p>Produksi kardus & karton box berkualitas untuk UMKM hingga perusahaan besar.</p>
+    </div>
+    <div class="info">
+        <i class="fa-solid fa-gears"></i>
+        <h4>Operasional</h4>
+        <p>Mengutamakan bahan baku terbaik, proses presisi, dan hasil produksi konsisten.</p>
+    </div>
+    <div class="info">
+        <i class="fa-solid fa-palette"></i>
+        <h4>Desain</h4>
+        <p>Kemasan kuat secara fungsi dan menarik secara visual.</p>
+    </div>
+    <div class="info">
+        <i class="fa-solid fa-leaf"></i>
+        <h4>Komitmen</h4>
+        <p>Menerapkan kemasan ramah lingkungan & material daur ulang.</p>
     </div>
 </div>
-
-<div class="acc-item">
-    <div class="acc-header">🎯 Tujuan <i class="fa-solid fa-chevron-down"></i></div>
-    <div class="acc-body">
-        Menjadi mitra terpercaya dalam menyediakan solusi kemasan yang efisien, kuat, dan bernilai estetika.
-    </div>
-</div>
-
-<div class="acc-item">
-    <div class="acc-header">🌱 Komitmen <i class="fa-solid fa-chevron-down"></i></div>
-    <div class="acc-body">
-        Mengutamakan kualitas, ketepatan waktu produksi, serta penerapan material ramah lingkungan.
-    </div>
-</div>
-
 </section>
 
-<section>
-<h2>Keunggulan Kami</h2>
+<section class="reveal">
+<h2><i class="fa-solid fa-star"></i> Visi & Nilai</h2>
 <div class="line"></div>
-<div class="cards">
-    <div class="card"><i class="fa-solid fa-check-circle"></i><h4>Kualitas</h4></div>
-    <div class="card"><i class="fa-solid fa-leaf"></i><h4>Eco Friendly</h4></div>
-    <div class="card"><i class="fa-solid fa-rocket"></i><h4>Inovatif</h4></div>
+
+<div class="info-grid">
+    <div class="info">
+        <i class="fa-solid fa-handshake"></i>
+        <h4>Profesional</h4>
+        <p>Pelayanan tepat waktu dan standar kerja tinggi.</p>
+    </div>
+    <div class="info">
+        <i class="fa-solid fa-rocket"></i>
+        <h4>Inovatif</h4>
+        <p>Solusi kemasan modern dan efisien.</p>
+    </div>
+    <div class="info">
+        <i class="fa-solid fa-award"></i>
+        <h4>Kepercayaan</h4>
+        <p>Mitra bisnis terpercaya jangka panjang.</p>
+    </div>
 </div>
 </section>
 
 </div>
 
-<section class="closing show">
-    <h2>Siap Menjadi Mitra Anda</h2>
-    <p>
-        Dengan pengalaman, komitmen, dan kualitas produksi yang terjaga,  
-        PT Ombak Biru Mentari hadir untuk mendukung kebutuhan kemasan bisnis Anda  
-        secara profesional, modern, dan berkelanjutan.
-    </p>
-</section>
+<footer>
+✨ Terima kasih telah mengunjungi PT Ombak Biru Mentari.<br>
+Kami siap tumbuh dan melangkah bersama bisnis Anda.<br><br>
 
-<a href="https://wa.me/6285947686712" class="wa-float" target="_blank">
-    <i class="fa-brands fa-whatsapp"></i>
+&copy; 2026 PT OMBAK BIRU MENTARI<br>
+<span style="font-size:0.8em; font-style:italic; opacity:0.85;">
+Design by : Ardhan Mulky Adly
+</span>
+</footer>
+
+<a class="wa-float" href="https://wa.me/6285947686712" target="_blank">
+<i class="fa-brands fa-whatsapp"></i> WhatsApp
 </a>
 
 <script>
@@ -315,20 +291,13 @@ function enterSite(){
     document.getElementById('bgMusic').play();
 }
 
-/* scroll animation */
-const sections=document.querySelectorAll('section');
-window.addEventListener('scroll',()=>{
-    sections.forEach(sec=>{
-        if(sec.getBoundingClientRect().top<window.innerHeight-80){
-            sec.classList.add('show');
-        }
-    });
-});
+const observer=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+        if(e.isIntersecting){e.target.classList.add('show')}
+    })
+},{threshold:.15})
 
-/* accordion */
-document.querySelectorAll('.acc-header').forEach(h=>{
-    h.onclick=()=>h.parentElement.classList.toggle('active');
-});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el))
 </script>
 
 </body>
