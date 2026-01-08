@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PT Ombak Biru Mentari</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+    margin:0;
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(135deg,#667eea,#764ba2,#f093fb);
+    color:#333;
+}
+
+/* ===== WELCOME ===== */
+#welcome{
+    position:fixed;
+    inset:0;
+    background:radial-gradient(circle at top,#764ba2,#000);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index:999;
+}
+.welcome-box{
+    background:rgba(255,255,255,.96);
+    padding:50px 40px;
+    border-radius:26px;
+    text-align:center;
+    max-width:430px;
+    width:90%;
+    animation:floatIn .9s ease;
+}
+@keyframes floatIn{
+    from{transform:translateY(40px);opacity:0}
+    to{transform:translateY(0);opacity:1}
+}
+.welcome-box h1{
+    font-size:2.2em;
+    margin-bottom:10px;
+    background:linear-gradient(135deg,#667eea,#764ba2);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+.welcome-box p{
+    font-size:1em;
+    color:#555;
+    margin-bottom:30px;
+}
+.welcome-box button{
+    padding:14px 34px;
+    border:none;
+    border-radius:16px;
+    font-size:1.05em;
+    font-weight:600;
+    color:#fff;
+    cursor:pointer;
+    background:linear-gradient(135deg,#667eea,#764ba2);
+    box-shadow:0 10px 25px rgba(102,126,234,.4);
+}
+
+/* ===== HEADER ===== */
+header{
+    background:#fff;
+    padding:30px 15px;
+    text-align:center;
+    position:sticky;
+    top:0;
+    z-index:10;
+}
+.logo{
+    font-size:2.4em;
+    font-weight:700;
+    background:linear-gradient(135deg,#667eea,#764ba2);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+/* ===== CONTENT ===== */
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:20px;
+    display:grid;
+    gap:30px;
+}
+section{
+    background:rgba(255,255,255,.95);
+    border-radius:24px;
+    padding:34px;
+    box-shadow:0 18px 40px rgba(0,0,0,.12);
+    opacity:0;
+    transform:translateY(40px);
+    transition:.6s ease;
+}
+section.show{
+    opacity:1;
+    transform:translateY(0);
+}
+h2{color:#667eea}
+.line{
+    height:4px;
+    background:linear-gradient(90deg,#667eea,#764ba2,#f093fb);
+    border-radius:5px;
+    margin:15px 0 25px;
+}
+
+/* ===== MANAGER ===== */
+.manager-box{
+    display:flex;
+    gap:16px;
+    align-items:center;
+    background:linear-gradient(135deg,rgba(102,126,234,.12),rgba(118,75,162,.12));
+    padding:18px;
+    border-radius:20px;
+}
+.manager-photo{
+    width:72px;
+    height:72px;
+    border-radius:50%;
+    object-fit:cover;
+    border:3px solid #667eea;
+}
+
+/* ===== ACCORDION ===== */
+.acc-item{
+    margin-bottom:15px;
+    border-radius:18px;
+    overflow:hidden;
+    background:#f6f7ff;
+}
+.acc-header{
+    padding:16px 20px;
+    font-weight:600;
+    cursor:pointer;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+.acc-body{
+    max-height:0;
+    overflow:hidden;
+    padding:0 20px;
+    transition:.4s ease;
+}
+.acc-item.active .acc-body{
+    max-height:300px;
+    padding:15px 20px 20px;
+}
+
+/* ===== CARDS ===== */
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+    gap:18px;
+}
+.card{
+    background:#fff;
+    padding:22px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,.1);
+}
+.card i{
+    font-size:2em;
+    color:#667eea;
+    margin-bottom:10px;
+}
+
+/* ===== CLOSING ===== */
+.closing{
+    text-align:center;
+    padding:70px 25px;
+    background:linear-gradient(135deg,#667eea,#764ba2);
+    color:#fff;
+}
+.closing h2{
+    font-size:2em;
+    margin-bottom:15px;
+}
+.closing p{
+    max-width:680px;
+    margin:0 auto;
+    font-size:1.05em;
+    line-height:1.7;
+    opacity:.95;
+}
+
+/* ===== WA ===== */
+.wa-float{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:58px;
+    height:58px;
+    background:#25D366;
+    color:#fff;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:1.9em;
+    box-shadow:0 10px 25px rgba(0,0,0,.3);
+    z-index:999;
+    animation:pulse 1.8s infinite;
+}
+@keyframes pulse{
+    0%{box-shadow:0 0 0 0 rgba(37,211,102,.6)}
+    70%{box-shadow:0 0 0 18px rgba(37,211,102,0)}
+    100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}
+}
+
+/* MOBILE */
+@media(max-width:480px){
+    .manager-box{flex-direction:column;text-align:center}
+}
+</style>
+</head>
+
+<body>
+
+<!-- WELCOME -->
+<div id="welcome">
+    <div class="welcome-box">
+        <h1>Halo 👋</h1>
+        <p>Selamat datang di website resmi<br><b>PT Ombak Biru Mentari</b></p>
+        <button onclick="enterSite()">Masuk & Jelajahi</button>
+    </div>
+</div>
+
+<!-- AUDIO -->
+<audio id="bgMusic" loop>
+    <source src="song.mp3" type="audio/mpeg">
+</audio>
+
+<header>
+    <div class="logo"><i class="fa-solid fa-box"></i> PT Ombak Biru Mentari</div>
+    <p>Solusi Packaging Kardus Berkualitas</p>
+</header>
+
+<div class="container">
+
+<section>
+<h2>Profil Perusahaan</h2>
+<div class="line"></div>
+
+<div class="manager-box">
+    <img src="manager.png" class="manager-photo">
+    <div>
+        <b>Manager: Pak Dumyati</b><br>
+        Butuh kerjaan? Hubungi aja Pak Dumyati  
+        <br>(jangan sering-sering, lagi sibuk 😄)
+        <br><b>📞 085947686712</b>
+    </div>
+</div>
+
+<div class="acc-item">
+    <div class="acc-header">🏢 Tentang Perusahaan <i class="fa-solid fa-chevron-down"></i></div>
+    <div class="acc-body">
+        PT Ombak Biru Mentari bergerak di bidang industri kemasan, fokus pada produksi kardus dan karton box
+        berkualitas untuk UMKM hingga perusahaan skala besar.
+    </div>
+</div>
+
+<div class="acc-item">
+    <div class="acc-header">🎯 Tujuan <i class="fa-solid fa-chevron-down"></i></div>
+    <div class="acc-body">
+        Menjadi mitra terpercaya dalam menyediakan solusi kemasan yang efisien, kuat, dan bernilai estetika.
+    </div>
+</div>
+
+<div class="acc-item">
+    <div class="acc-header">🌱 Komitmen <i class="fa-solid fa-chevron-down"></i></div>
+    <div class="acc-body">
+        Mengutamakan kualitas, ketepatan waktu produksi, serta penerapan material ramah lingkungan.
+    </div>
+</div>
+
+</section>
+
+<section>
+<h2>Keunggulan Kami</h2>
+<div class="line"></div>
+<div class="cards">
+    <div class="card"><i class="fa-solid fa-check-circle"></i><h4>Kualitas</h4></div>
+    <div class="card"><i class="fa-solid fa-leaf"></i><h4>Eco Friendly</h4></div>
+    <div class="card"><i class="fa-solid fa-rocket"></i><h4>Inovatif</h4></div>
+</div>
+</section>
+
+</div>
+
+<section class="closing show">
+    <h2>Siap Menjadi Mitra Anda</h2>
+    <p>
+        Dengan pengalaman, komitmen, dan kualitas produksi yang terjaga,  
+        PT Ombak Biru Mentari hadir untuk mendukung kebutuhan kemasan bisnis Anda  
+        secara profesional, modern, dan berkelanjutan.
+    </p>
+</section>
+
+<a href="https://wa.me/6285947686712" class="wa-float" target="_blank">
+    <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<script>
+function enterSite(){
+    document.getElementById('welcome').style.display='none';
+    document.getElementById('bgMusic').play();
+}
+
+/* scroll animation */
+const sections=document.querySelectorAll('section');
+window.addEventListener('scroll',()=>{
+    sections.forEach(sec=>{
+        if(sec.getBoundingClientRect().top<window.innerHeight-80){
+            sec.classList.add('show');
+        }
+    });
+});
+
+/* accordion */
+document.querySelectorAll('.acc-header').forEach(h=>{
+    h.onclick=()=>h.parentElement.classList.toggle('active');
+});
+</script>
+
+</body>
+</html>
